@@ -76,7 +76,7 @@ public boolean isDuplicate(String email, String username) {
        
      public boolean isDuplicate(String email, String username, String userId) {
     try {
-        String query = "SELECT * FROM tbl_user WHERE (u_email = ? OR u_username = ?) AND u_id != ?";
+        String query = "SELECT * FROM table_user WHERE (u_email = ? OR u_username = ?) AND u_id != ?";
         PreparedStatement pstmt = connect.prepareStatement(query);
         pstmt.setString(1, email);
         pstmt.setString(2, username);
