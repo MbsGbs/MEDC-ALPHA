@@ -401,7 +401,7 @@ public class addform extends javax.swing.JFrame {
     }
 
     // If all validations pass, proceed with database insertion
-    String sql = "INSERT INTO tbl_user (u_fname, u_lname, u_email, u_contact, u_username, u_password, u_type, u_status) "
+    String sql = "INSERT INTO table_user (u_fname, u_lname, u_email, u_contact, u_username, u_password, u_type, u_status) "
                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
     boolean isInserted = dbc.insertData(sql,

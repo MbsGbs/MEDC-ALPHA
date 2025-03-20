@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 27, 2025 at 10:42 AM
+-- Generation Time: Mar 20, 2025 at 10:54 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `medc`
+-- Database: `tbl_user`
 --
 
 -- --------------------------------------------------------
@@ -44,10 +44,9 @@ CREATE TABLE `table_user` (
 --
 
 INSERT INTO `table_user` (`u_id`, `u_fname`, `u_lname`, `u_email`, `u_contact`, `u_username`, `u_password`, `u_type`, `u_status`) VALUES
-(1, 'Maby', 'Autahay', 'joshuagameng@gmail.com', '09392162396', 'maby', '1234', 'admin', ''),
-(2, 'maby', 'autahay', 'maby@gmail.com', '09392162396', 'mabyxd', '12345678', 'admin', 'Pending'),
-(13, 'sdf', 'dfs', 'dsf', 'dfs', 'sdf', 'fds', 'user', 'Pending'),
-(14, 's', 's', 's', 's', 's', 's', 'user', 'Pending');
+(15, 'maby', 'maby', 'mabs@gmail.com', '09392162396', 'ehey', 'qheJozM0WWhVWEY2oBFMfEvfUf+PpWrUp9X1fc2JtHg=', 'admin', ' Pending'),
+(16, 'angela', 'romero', 'romero@gmail.com', '09392162396', 'x11', 'FeKw08M4keuw8e9gnsQZQgwg4yDOlMZfvIwzEkSOsiU=', 'user', 'Active'),
+(17, 'Sir', 'asdsad', 'test@gmail.com', '09392162396', 'c11', '73l8gRjwLftklgfdXT+MdiMEjJwGPVMsyVxe16iYpk8=', 'admin', 'Active');
 
 --
 -- Indexes for dumped tables
@@ -67,7 +66,7 @@ ALTER TABLE `table_user`
 -- AUTO_INCREMENT for table `table_user`
 --
 ALTER TABLE `table_user`
-  MODIFY `u_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `u_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

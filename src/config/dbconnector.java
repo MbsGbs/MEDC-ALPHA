@@ -19,7 +19,7 @@ public class dbconnector {
     public dbconnector(){
     try {
         // Ensure the URL, username, and password are correct
-        connect = DriverManager.getConnection("jdbc:mysql://localhost:3307/tuah", "root", "");
+        connect = DriverManager.getConnection("jdbc:mysql://localhost:3306/tbl_user", "root", "");
         System.out.println("Connected to the database.");
     } catch (SQLException ex) {
         System.out.println("Failed to connect to the database:");
@@ -128,4 +128,18 @@ public boolean isDuplicate(String email, String username) {
         }
     }
 }
+
+   public String getPassword(String query, int uid) {
+        try {
+            PreparedStatement pstmt = connect.prepareStatement(query);
+            pstmt.setInt(1, uid);
+            ResultSet rs = pstmt.executeQuery();
+            if (rs.next()) {
+                return rs.getString("u_password"); // Return the hashed password from the database
+            }
+        } catch (SQLException ex) {
+            System.out.println("Error retrieving password: " + ex.getMessage());
+        }
+        return null; // Return null if no password is found or an error occurs
+    }
 }

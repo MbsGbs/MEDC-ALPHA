@@ -30,18 +30,23 @@ public class GUI extends javax.swing.JFrame {
  static String type;
  
 public static boolean loginAcc(String username, String password) { 
-    dbconnector connector = new dbconnector();
+   dbconnector connector = new dbconnector();
 
     try {
         // Hash the password entered by the user
         String hashedPassword = passwordHasher.hashPassword(password);
 
         // Query the database for the username and hashed password
-        String query = "SELECT * FROM tbl_user WHERE u_username = ? AND u_password = ?";
+        String query = "SELECT * FROM table_user WHERE u_username = ? AND u_password = ?";
         PreparedStatement pstmt = connector.getConnection().prepareStatement(query);
         pstmt.setString(1, username);
         pstmt.setString(2, hashedPassword); // Use the hashed password for comparison
         ResultSet resultSet = pstmt.executeQuery();
+
+        // Debug: Print the query and parameters
+        System.out.println("Executing query: " + query);
+        System.out.println("Username: " + username);
+        System.out.println("Hashed Password: " + hashedPassword);
 
         if (resultSet.next()) {
             // Store user data in the Session
@@ -206,11 +211,7 @@ public static boolean loginAcc(String username, String password) {
  }//GEN-LAST:event_registrationMouseClicked
 
     private void LoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginMouseClicked
-Login.addActionListener(new java.awt.event.ActionListener() {
-    public void actionPerformed(java.awt.event.ActionEvent evt) {
-         LoginMouseClicked(evt);
-    }
-});
+
     }//GEN-LAST:event_LoginMouseClicked
 
  private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
